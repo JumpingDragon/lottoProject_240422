@@ -37,7 +37,8 @@ lotto_freq = Counter(lotto_num_list)  # 내재된 클래스 counter는 빈도수
 print(lotto_freq)
 
 plotting = pd.Series(lotto_freq)
-plotting.plot(kind='bar',grid=True, title='Lotto KOR DATA')
+plotting = plotting.sort_index()
+plotting.plot(figsize=(20,10), kind='barh',grid=True, title='Lotto KOR DATA')
 plt.show()
 
 cur.close()
